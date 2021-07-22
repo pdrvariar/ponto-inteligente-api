@@ -1,3 +1,5 @@
+CREATE SCHEMA ponto_inteligente;
+
 CREATE TABLE ponto_inteligente.empresa (
 	id_empresa bigserial,
 	cnpj varchar(255) NOT NULL,
