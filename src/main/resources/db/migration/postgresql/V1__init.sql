@@ -1,6 +1,4 @@
-CREATE SCHEMA ponto_inteligente;
-
-CREATE TABLE ponto_inteligente.empresa (
+CREATE TABLE empresa (
 	id_empresa bigserial,
 	cnpj varchar(255) NOT NULL,
 	data_atualizacao timestamp NOT NULL,
@@ -9,7 +7,7 @@ CREATE TABLE ponto_inteligente.empresa (
 	CONSTRAINT empresa_pk PRIMARY KEY (id_empresa)
 );
 
-CREATE TABLE ponto_inteligente.funcionario (
+CREATE TABLE funcionario (
 	id_funcionario bigserial,
 	cpf varchar(255) NOT NULL,
 	data_atualizacao timestamp NOT NULL,
@@ -23,11 +21,11 @@ CREATE TABLE ponto_inteligente.funcionario (
 	valor_hora decimal(19, 2) default null,
 	id_empresa int8 default null,
 	CONSTRAINT fk_funcionario_empresa FOREIGN KEY(id_empresa) 
-	REFERENCES ponto_inteligente.empresa (id_empresa),	
+	REFERENCES empresa (id_empresa),	
 	CONSTRAINT funcionario_pk PRIMARY KEY (id_funcionario)
 );
 
-CREATE TABLE ponto_inteligente.lancamento (
+CREATE TABLE lancamento (
 	id_lancamento bigserial,
 	data timestamp NOT NULL,
 	data_atualizacao timestamp NOT NULL,
@@ -37,6 +35,6 @@ CREATE TABLE ponto_inteligente.lancamento (
 	tipo varchar(255) NOT NULL,
 	id_funcionario int8 default null,
 	CONSTRAINT fk_lancamento_funcionario FOREIGN KEY(id_funcionario) 
-	REFERENCES ponto_inteligente.funcionario (id_funcionario),	
+	REFERENCES funcionario (id_funcionario),	
 	CONSTRAINT lancamento_pk PRIMARY KEY (id_lancamento)
 );

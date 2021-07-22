@@ -25,7 +25,7 @@ import javax.persistence.Transient;
 import com.kazale.pontointeligente.api.enums.PerfilEnum;
 
 @Entity
-@Table(name = "funcionario", schema="ponto_inteligente")
+@Table(name = "funcionario")
 public class Funcionario implements Serializable {
 
 	private static final long serialVersionUID = -3807086309697776307L;
