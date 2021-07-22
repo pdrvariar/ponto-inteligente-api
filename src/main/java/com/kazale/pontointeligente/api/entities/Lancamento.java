@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 import com.kazale.pontointeligente.api.enums.TipoEnum;
 
 @Entity
-@Table(name = "lancamento")
+@Table(name = "lancamento", schema="ponto_inteligente")
 public class Lancamento implements Serializable {
 
 	private static final long serialVersionUID = 2572652845440151081L;
